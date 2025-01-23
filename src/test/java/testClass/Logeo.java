@@ -29,7 +29,9 @@ public class Logeo {
         cargaInformacion.rellenarCampoAreaTexto("ljsdlsdj");
         cargaInformacion.rellenarCampoFecha("02/02/2023");
         cargaInformacion.rellenarCampoLista("valor 2");
-        cargaInformacion.seleccionMultiple(2);
+        cargaInformacion.seleccionMultiple2("1,2,3");
+        cargaInformacion.comboRadio(2);
+        cargaInformacion.clickBtnEnviar();
 
 
 

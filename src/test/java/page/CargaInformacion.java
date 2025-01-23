@@ -102,8 +102,11 @@ public class CargaInformacion {
         select.selectByVisibleText(valor);
     }
 
-    public void seleccionMultiple(int indicador){
-       switch (indicador){
+    public void seleccionMultiple2(String indicador){
+        String[] indicadores = indicador.split(",");
+        for (String nro:indicadores){
+            int numero = Integer.parseInt(nro);
+       switch (numero) {
            case 1:
                campoMultiple1.click();
                break;
@@ -116,16 +119,31 @@ public class CargaInformacion {
            default:
                System.out.println("Valor no procesable");
 
-
        }
-
-
-
+       }
 
     }
 
 
+    public void comboRadio(int indicador){
+        switch (indicador){
+            case 1:
+                rdbtnCombo1.click();
+                break;
+            case 2:
+                rdbtnCombo2.click();
+                break;
+            case 3:
+                rdbtnCombo3.click();
+                break;
+            default:
+
+        }
+
+    }
 
 
-
+    public void clickBtnEnviar(){
+        btnEnviar.click();
+    }
 }
