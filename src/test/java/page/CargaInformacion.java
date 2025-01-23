@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CargaInformacion {
@@ -64,10 +65,9 @@ public class CargaInformacion {
 
     WebDriverWait webDriverWait;
 
-    public CargaInformacion(WebDriver webdriver){
-        PageFactory.initElements(webDriver,this);
-        this.webDriver = webDriver;
-
+    public CargaInformacion(WebDriver webDriver) {
+    this.webDriver = webDriver; // Asignamos primero
+    PageFactory.initElements(webDriver, this); // Luego inicializamos los elementos
     }
 
     public String recuperarTitulo(){
@@ -78,6 +78,51 @@ public class CargaInformacion {
 
     }
 
+    public void rellenarCampoTexto(String texto){
+        campoTexto.sendKeys(texto);
+
+    }
+
+    public void rellenarCampoMail(String mail){
+        campoCorreo.sendKeys(mail);
+    }
+
+    public void rellenarCampoAreaTexto(String areaTexto){
+        campoTextArea.sendKeys(areaTexto);
+
+    }
+
+    public void rellenarCampoFecha(String fecha){
+        campoFecha.sendKeys(fecha);
+
+    }
+
+    public void rellenarCampoLista(String valor){
+        Select select = new Select(campoLista);
+        select.selectByVisibleText(valor);
+    }
+
+    public void seleccionMultiple(int indicador){
+       switch (indicador){
+           case 1:
+               campoMultiple1.click();
+               break;
+           case 2:
+               campoMultiple2.click();
+               break;
+           case 3:
+               campoMultiple3.click();
+               break;
+           default:
+               System.out.println("Valor no procesable");
+
+
+       }
+
+
+
+
+    }
 
 
 

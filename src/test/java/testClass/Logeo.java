@@ -24,6 +24,14 @@ public class Logeo {
         login.ingresarClave(clave);
         login.clickBtnIngresar();
         cargaInformacion.recuperarTitulo();
+        cargaInformacion.rellenarCampoTexto("Prueba Testeo");
+        cargaInformacion.rellenarCampoMail("prueba@gmail.com");
+        cargaInformacion.rellenarCampoAreaTexto("ljsdlsdj");
+        cargaInformacion.rellenarCampoFecha("02/02/2023");
+        cargaInformacion.rellenarCampoLista("valor 2");
+        cargaInformacion.seleccionMultiple(2);
+
+
 
 
         }
