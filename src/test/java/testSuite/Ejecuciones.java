@@ -1,13 +1,12 @@
 package testSuite;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import testClass.Logeo;
 
-public class EjecucionLogin {
+public class Ejecuciones {
 
     ChromeDriver webDriver;
 
@@ -29,8 +28,8 @@ public class EjecucionLogin {
 
     @Test
     public void LogeoPagina() {
-        Logeo logeo = new Logeo();
-        logeo.CasoLogin(webDriver);
+        Logeo logeo = new Logeo(webDriver);
+        logeo.CasoLogin("nvivas","qanova");
 
 
     }
