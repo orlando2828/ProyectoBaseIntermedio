@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d9c123-2c26-4c42-8e6b-bc9af8de59f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testClass/LlenadoFormulario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClass/Logeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClass/Logeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testSuite/Ejecuciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSuite/Ejecuciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
     "Gradle.Ejecuciones.LogeoPagina.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "PlantillaIntermedia",
+    "git-widget-placeholder": "Plantilla2Casos",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/git/ProyectoInicial"
   }
