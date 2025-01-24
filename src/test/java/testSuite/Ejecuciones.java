@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import testClass.LlenadoFormulario;
 import testClass.Logeo;
 
 public class Ejecuciones {
@@ -33,6 +34,13 @@ public class Ejecuciones {
 
 
     }
+    @Test
+    public void IngresoDatos() {
+        LlenadoFormulario llenadoFormulario = new LlenadoFormulario(webDriver);
+        llenadoFormulario.CasoFormulario("nvivas","qanova");
+
+        }
+
 
 
 }
