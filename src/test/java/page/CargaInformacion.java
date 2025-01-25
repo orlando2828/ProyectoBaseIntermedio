@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DriverContext;
+import utils.DriverManager;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 public class CargaInformacion {
 
@@ -52,7 +61,7 @@ public class CargaInformacion {
     @FindBy(xpath = "//*[@id='imObjectForm_1_buttonswrap']/input[2]")
     private WebElement btnResetear;
 
-    @FindBy(xpath =  "//*[@id='imObjectForm_1_5_icon']" )
+    @FindBy(xpath = "//*[@id='imObjectForm_1_5_icon']")
     private WebElement iconoCalendario;
 
     @FindBy(xpath = "//*[@id='imDPleft']")
@@ -65,68 +74,67 @@ public class CargaInformacion {
 
     WebDriverWait webDriverWait;
 
-    public CargaInformacion(WebDriver webDriver) {
-    this.webDriver = webDriver; // Asignamos primero
-    PageFactory.initElements(webDriver, this); // Luego inicializamos los elementos
+    public CargaInformacion() {
+        this.webDriverWait = new WebDriverWait(DriverContext.getDriver(),30); // Asignamos primero
+        PageFactory.initElements(DriverContext.getDriver(), this); // Luego inicializamos los elementos
     }
 
-    public String recuperarTitulo(){
-        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 30);
+    public String recuperarTitulo() {
         webDriverWait.until(ExpectedConditions.visibilityOf(titulo));
         String texto = titulo.getText();
         return texto;
 
     }
 
-    public void rellenarCampoTexto(String texto){
+    public void rellenarCampoTexto(String texto) {
         campoTexto.sendKeys(texto);
 
     }
 
-    public void rellenarCampoMail(String mail){
+    public void rellenarCampoMail(String mail) {
         campoCorreo.sendKeys(mail);
     }
 
-    public void rellenarCampoAreaTexto(String areaTexto){
+    public void rellenarCampoAreaTexto(String areaTexto) {
         campoTextArea.sendKeys(areaTexto);
 
     }
 
-    public void rellenarCampoFecha(String fecha){
+    public void rellenarCampoFecha(String fecha) {
         campoFecha.sendKeys(fecha);
 
     }
 
-    public void rellenarCampoLista(String valor){
+    public void rellenarCampoLista(String valor) {
         Select select = new Select(campoLista);
         select.selectByVisibleText(valor);
     }
 
-    public void seleccionMultiple2(String indicador){
+    public void seleccionMultiple2(String indicador) {
         String[] indicadores = indicador.split(",");
-        for (String nro:indicadores){
+        for (String nro : indicadores) {
             int numero = Integer.parseInt(nro);
-       switch (numero) {
-           case 1:
-               campoMultiple1.click();
-               break;
-           case 2:
-               campoMultiple2.click();
-               break;
-           case 3:
-               campoMultiple3.click();
-               break;
-           default:
-               System.out.println("Valor no procesable");
+            switch (numero) {
+                case 1:
+                    campoMultiple1.click();
+                    break;
+                case 2:
+                    campoMultiple2.click();
+                    break;
+                case 3:
+                    campoMultiple3.click();
+                    break;
+                default:
+                    System.out.println("Valor no procesable");
 
-       }
-       }
+            }
+        }
 
     }
 
 
-    public void comboRadio(int indicador){
-        switch (indicador){
+    public void comboRadio(int indicador) {
+        switch (indicador) {
             case 1:
                 rdbtnCombo1.click();
                 break;
@@ -142,8 +150,32 @@ public class CargaInformacion {
 
     }
 
-
-    public void clickBtnEnviar(){
+    public void clickBtnEnviar() {
         btnEnviar.click();
+    }
+
+    public void seleccionarFechaCalendario(String fecha) throws ParseException {
+        iconoCalendario.click();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String hoy = simpleDateFormat.format(new Date());
+        Date hoyDate = simpleDateFormat.parse(hoy);
+        Date fechaDate = simpleDateFormat.parse(fecha);
+        long diferencia = ChronoUnit.MONTHS.between(LocalDate.parse(hoy).withMonth(1), LocalDate.parse(fecha).withDayOfMonth(1));
+        int dia = Integer.parseInt(fecha.substring(fecha.length()-2));
+        int meses;
+        if (hoyDate.after(fechaDate)) {
+            meses = (int) (diferencia * -1);
+            for (int x = 0; x <= meses - 1; x++) {
+                btnRetrocederMes.click();
+
+            }
+        } else {
+            meses = (int) diferencia;
+            for (int x = 0; x <= meses - 1; x++) {
+                btnAvanzarMes.click();
+            }
+
+        }
+        DriverContext.getDriver().findElement(By.xpath("//*[@id=\"imDPcal\"]//td[text() = '"+ dia +"']")).click();
     }
 }

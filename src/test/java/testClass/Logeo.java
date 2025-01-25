@@ -9,17 +9,16 @@ public class Logeo {
     private Login login;
     private CargaInformacion cargaInformacion;
 
-    WebDriver webDriver;
+   // WebDriver webDriver; se eliminan los WebDriver tb en public Logeo
 
-    //Constructor
-    public Logeo(WebDriver webDriver){
-        this.webDriver = webDriver;
+
+    public Logeo(){
+
     }
-
-
+//se eliminan los webDriver de Login y CargaInformación
         public void CasoLogin(String usuario, String clave){
-        login = new Login(webDriver);
-        cargaInformacion = new CargaInformacion(webDriver);
+        login = new Login();
+        cargaInformacion = new CargaInformacion();
         login.ingresarUsuario(usuario);
         login.ingresarClave(clave);
         login.clickBtnIngresar();
