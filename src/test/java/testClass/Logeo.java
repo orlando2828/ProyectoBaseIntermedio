@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import page.CargaInformacion;
 import page.Login;
 
+import java.text.ParseException;
+
 public class Logeo {
 
     private Login login;
@@ -16,7 +18,7 @@ public class Logeo {
 
     }
 //se eliminan los webDriver de Login y CargaInformación
-        public void CasoLogin(String usuario, String clave){
+        public void CasoLogin(String usuario, String clave) throws ParseException {
         login = new Login();
         cargaInformacion = new CargaInformacion();
         login.ingresarUsuario(usuario);

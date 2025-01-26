@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d9c123-2c26-4c42-8e6b-bc9af8de59f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Constants/Ambientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Constants/Navegador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ReadProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Reporte/EstadoPrueba.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Reporte/ImageResize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Reporte/PdfQaNovaReports.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/LogoQaNova.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/page/CargaInformacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/CargaInformacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testClass/Logeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClass/Logeo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testSuite/Ejecuciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSuite/Ejecuciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
